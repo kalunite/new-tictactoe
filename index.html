@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +8,75 @@
     <title>New TicTacToe</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <h1>New TicTacToe</h1>
     <div class="container">
-            <div class="score-area">
-                <div class="p1-area">
-                    <div class="turn">X</div>
-                    Skor : 
-                    <br>
-                    <span class="score">0</span>
-                </div>
-                <div class="p2-area">
-                    <div class="turn">O</div>
-                    Skor : 
-                    <br>
-                    <span class="score">0</span>
-                </div>
+        <div class="score-area">
+            <div class="p1-area">
+                <div class="turn">X</div>
+                Skor :
+                <br>
+                <span class="score">0</span>
             </div>
-            <div class="game-board">
-                <table>
-                    <tr>
-                        <th class="box-1 box-blank move-from-box-2 move-from-box-4 move-from-box-5"></th>
-                        <th class="box-2 box-blank move-from-box-1 move-from-box-3 move-from-box-4 move-from-box-5 move-from-box-6"></th>
-                        <th class="box-3 box-blank move-from-box-2 move-from-box-5 move-from-box-6"></th>
-                    </tr>
-                    <tr>
-                        <th class="box-4 box-blank move-from-box-1 move-from-box-2 move-from-box-5 move-from-box-7 move-from-box-8"></th>
-                        <th class="box-5 box-blank move-from-box-1 move-from-box-2 move-from-box-3 move-from-box-4 move-from-box-6 move-from-box-7 move-from-box-8 move-from-box-9"></th>
-                        <th class="box-6 box-blank move-from-box-2 move-from-box-3 move-from-box-5 move-from-box-8 move-from-box-9"></th>
-                    </tr>
-                    <tr>
-                        <th class="box-7 box-blank move-from-box-4 move-from-box-5 move-from-box-8"></th>
-                        <th class="box-8 box-blank move-from-box-4 move-from-box-5 move-from-box-6 move-from-box-7 move-from-box-9"></th>
-                        <th class="box-9 box-blank move-from-box-5 move-from-box-6 move-from-box-8"></th>
-                    </tr>
-                </table>
+            <div class="p2-area">
+                <div class="turn">O</div>
+                Skor :
+                <br>
+                <span class="score">0</span>
             </div>
-            <div class="game-play">
-                <div class="now-turn">
-                    Sekarang Giliran :
-                    <br>
-                    <div class="turn">X</div>
-                </div>
-                <div class="steps-move">
-                    Langkah ke :
-                    <br>
-                    <span class="steps">0</span>
-                </div>
-                <div class="game-play-explaining">
-                    Petunjuk : 
-                    <br>
-                    <span class="explain">
-                        Letakkan item ke salah satu area yang kosong. Sejajarkan item sehingga membentuk baris vertikal, horizontal, atau diagonal untuk memenangkan permainan.
-                    </span>
-                </div>
+        </div>
+        <div class="game-board">
+            <table>
+                <tr>
+                    <th class="box-1 box-blank move-from-box-2 move-from-box-4 move-from-box-5"></th>
+                    <th
+                        class="box-2 box-blank move-from-box-1 move-from-box-3 move-from-box-4 move-from-box-5 move-from-box-6">
+                    </th>
+                    <th class="box-3 box-blank move-from-box-2 move-from-box-5 move-from-box-6"></th>
+                </tr>
+                <tr>
+                    <th
+                        class="box-4 box-blank move-from-box-1 move-from-box-2 move-from-box-5 move-from-box-7 move-from-box-8">
+                    </th>
+                    <th
+                        class="box-5 box-blank move-from-box-1 move-from-box-2 move-from-box-3 move-from-box-4 move-from-box-6 move-from-box-7 move-from-box-8 move-from-box-9">
+                    </th>
+                    <th
+                        class="box-6 box-blank move-from-box-2 move-from-box-3 move-from-box-5 move-from-box-8 move-from-box-9">
+                    </th>
+                </tr>
+                <tr>
+                    <th class="box-7 box-blank move-from-box-4 move-from-box-5 move-from-box-8"></th>
+                    <th
+                        class="box-8 box-blank move-from-box-4 move-from-box-5 move-from-box-6 move-from-box-7 move-from-box-9">
+                    </th>
+                    <th class="box-9 box-blank move-from-box-5 move-from-box-6 move-from-box-8"></th>
+                </tr>
+            </table>
+        </div>
+        <div class="game-play">
+            <div class="now-turn">
+                Sekarang Giliran :
+                <br>
+                <div class="turn">X</div>
             </div>
+            <div class="steps-move">
+                Langkah ke :
+                <br>
+                <span class="steps">0</span>
+            </div>
+            <div class="game-play-explaining">
+                Petunjuk :
+                <br>
+                <span class="explain">
+                    Letakkan item ke salah satu area yang kosong. Sejajarkan item sehingga membentuk baris vertikal,
+                    horizontal, atau diagonal untuk memenangkan permainan.
+                </span>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>

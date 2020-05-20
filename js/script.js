@@ -1,13 +1,13 @@
 const boxAll = document.querySelectorAll(`th`);
-    const box1 = document.querySelector(`.box-1`);
-    const box2 = document.querySelector(`.box-2`);
-    const box3 = document.querySelector(`.box-3`);
-    const box4 = document.querySelector(`.box-4`);
-    const box5 = document.querySelector(`.box-5`);
-    const box6 = document.querySelector(`.box-6`);
-    const box7 = document.querySelector(`.box-7`);
-    const box8 = document.querySelector(`.box-8`);
-    const box9 = document.querySelector(`.box-9`);
+const box1 = document.querySelector(`.box-1`);
+const box2 = document.querySelector(`.box-2`);
+const box3 = document.querySelector(`.box-3`);
+const box4 = document.querySelector(`.box-4`);
+const box5 = document.querySelector(`.box-5`);
+const box6 = document.querySelector(`.box-6`);
+const box7 = document.querySelector(`.box-7`);
+const box8 = document.querySelector(`.box-8`);
+const box9 = document.querySelector(`.box-9`);
 const boxBlank = document.querySelectorAll(`.box-blank`);
 const moveFromBox1 = document.querySelectorAll(`.move-from-box-1`);
 const moveFromBox2 = document.querySelectorAll(`.move-from-box-2`);
@@ -35,17 +35,17 @@ const tableMove = [
 ]
 
 const p1 = {
-    turn : `X`,
-    color : `blue`,
-    score : 0,
-    class : `turn-p1`
+    turn: `X`,
+    color: `blue`,
+    score: 0,
+    class: `turn-p1`
 }
 
 const p2 = {
-    turn : `O`,
-    color : `red`,
-    score : 0,
-    class : `turn-p2`
+    turn: `O`,
+    color: `red`,
+    score: 0,
+    class: `turn-p2`
 }
 
 let starter = p1.turn;
@@ -93,27 +93,23 @@ function selectTurn() {
         if (this == table[0] &&
             table[1].innerText != `` &&
             table[3].innerText != `` &&
-            table[4].innerText != `` 
-            ||
+            table[4].innerText != `` ||
             this == table[1] &&
             table[0].innerText != `` &&
             table[2].innerText != `` &&
             table[3].innerText != `` &&
             table[4].innerText != `` &&
-            table[5].innerText != `` 
-            ||
+            table[5].innerText != `` ||
             this == table[2] &&
             table[1].innerText != `` &&
             table[4].innerText != `` &&
-            table[5].innerText != `` 
-            ||
+            table[5].innerText != `` ||
             this == table[3] &&
             table[0].innerText != `` &&
             table[1].innerText != `` &&
             table[4].innerText != `` &&
             table[6].innerText != `` &&
-            table[7].innerText != `` 
-            ||
+            table[7].innerText != `` ||
             this == table[4] &&
             table[0].innerText != `` &&
             table[1].innerText != `` &&
@@ -122,32 +118,28 @@ function selectTurn() {
             table[5].innerText != `` &&
             table[6].innerText != `` &&
             table[7].innerText != `` &&
-            table[8].innerText != `` 
-            ||
+            table[8].innerText != `` ||
             this == table[5] &&
             table[1].innerText != `` &&
             table[2].innerText != `` &&
             table[4].innerText != `` &&
             table[7].innerText != `` &&
-            table[8].innerText != ``
-            ||
+            table[8].innerText != `` ||
             this == table[6] &&
             table[3].innerText != `` &&
             table[4].innerText != `` &&
-            table[7].innerText != `` 
-            ||
+            table[7].innerText != `` ||
             this == table[7] &&
             table[3].innerText != `` &&
             table[4].innerText != `` &&
             table[5].innerText != `` &&
             table[6].innerText != `` &&
-            table[8].innerText != `` 
-            ||
+            table[8].innerText != `` ||
             this == table[8] &&
             table[4].innerText != `` &&
             table[5].innerText != `` &&
             table[7].innerText != ``
-            ) {
+        ) {
             moveBlock = true;
         }
     }
@@ -178,7 +170,7 @@ function selectTurn() {
             }
         }
         undoSelect();
-        boxBlank.forEach( blank => {
+        boxBlank.forEach(blank => {
             blank.removeEventListener(`click`, moveTurn);
         });
         selectedMove = this;
@@ -250,8 +242,8 @@ function moveTurn() {
 function turnOffMovePossibly() {
     for (let i = 0; i < tableMove.length; i++) {
         if (selectedMove == table[i]) {
-            tableMove[i].forEach( possibleMove => {
-                    return possibleMove.style.opacity = `1`;
+            tableMove[i].forEach(possibleMove => {
+                return possibleMove.style.opacity = `1`;
             })
         }
     }
@@ -266,32 +258,25 @@ function winnerJudging(player) {
     if (
         table[0].innerText == player &&
         table[1].innerText == player &&
-        table[2].innerText == player
-        ||
+        table[2].innerText == player ||
         table[3].innerText == player &&
         table[4].innerText == player &&
-        table[5].innerText == player
-        ||
+        table[5].innerText == player ||
         table[6].innerText == player &&
         table[7].innerText == player &&
-        table[8].innerText == player
-        ||
+        table[8].innerText == player ||
         table[0].innerText == player &&
         table[3].innerText == player &&
-        table[6].innerText == player
-        ||
+        table[6].innerText == player ||
         table[1].innerText == player &&
         table[4].innerText == player &&
-        table[7].innerText == player
-        ||
+        table[7].innerText == player ||
         table[2].innerText == player &&
         table[5].innerText == player &&
-        table[8].innerText == player
-        ||
+        table[8].innerText == player ||
         table[0].innerText == player &&
         table[4].innerText == player &&
-        table[8].innerText == player
-        ||
+        table[8].innerText == player ||
         table[2].innerText == player &&
         table[4].innerText == player &&
         table[6].innerText == player
@@ -316,15 +301,16 @@ function winnerJudging(player) {
 
 function resetSettings() {
     if (steps >= 6) {
-        boxBlank.forEach( blank => {
+        boxBlank.forEach(blank => {
             blank.removeEventListener(`click`, moveTurn);
+            blank.removeEventListener(`click`, selectTurn);
         });
     } else {
-        boxAll.forEach( box => {
-            box.removeEventListener(`click`, turnIn)
+        boxAll.forEach(box => {
+            box.removeEventListener(`click`, turnIn);
         })
     }
-    boxAll.forEach( box => {
+    boxAll.forEach(box => {
         box.innerText = ``;
         box.style.backgroundColor = `azure`;
         box.classList.add(`box-blank`);
@@ -340,12 +326,12 @@ function gamePlay() {
     explainingGame();
     checkingNowTurn();
     if (steps == 6) {
-        boxAll.forEach( box => {
+        boxAll.forEach(box => {
             box.removeEventListener(`click`, turnIn);
         })
         return selectPlay();
     }
-    boxAll.forEach( box => {
+    boxAll.forEach(box => {
         box.addEventListener(`click`, turnIn);
     });
 }
@@ -353,44 +339,44 @@ function gamePlay() {
 function selectPlay() {
     explainingGame();
     if (selectToMove) {
-        document.querySelectorAll(`.turn-on`).forEach( filled => {
+        document.querySelectorAll(`.turn-on`).forEach(filled => {
             filled.removeEventListener(`click`, selectTurn);
         });
         return movePlay();
     }
-    document.querySelectorAll(`.turn-on`).forEach( filled => {
+    document.querySelectorAll(`.turn-on`).forEach(filled => {
         filled.addEventListener(`click`, selectTurn);
     });
 }
 
 function movePlay() {
     if (!selectToMove) {
-        boxBlank.forEach( blank => {
+        boxBlank.forEach(blank => {
             blank.removeEventListener(`click`, moveTurn);
         });
         if (!xIsNext) {
-            document.querySelectorAll(`.${p1.class}`).forEach( p1 => {
+            document.querySelectorAll(`.${p1.class}`).forEach(p1 => {
                 p1.removeEventListener(`click`, selectTurn);
             });
         } else {
-            document.querySelectorAll(`.${p2.class}`).forEach( p2 => {
+            document.querySelectorAll(`.${p2.class}`).forEach(p2 => {
                 p2.removeEventListener(`click`, selectTurn);
             });
         }
         return selectPlay();
     }
     if (xIsNext) {
-        document.querySelectorAll(`.${p1.class}`).forEach( p1 => {
+        document.querySelectorAll(`.${p1.class}`).forEach(p1 => {
             p1.addEventListener(`click`, selectTurn);
         });
     } else {
-        document.querySelectorAll(`.${p2.class}`).forEach( p2 => {
+        document.querySelectorAll(`.${p2.class}`).forEach(p2 => {
             p2.addEventListener(`click`, selectTurn);
         });
     }
     for (let i = 0; i < tableMove.length; i++) {
         if (selectedMove == table[i]) {
-            tableMove[i].forEach( possibleMove => {
+            tableMove[i].forEach(possibleMove => {
                 if (possibleMove.innerText == ``) {
                     possibleMove.style.opacity = `0.3`;
                     possibleMove.addEventListener(`click`, moveTurn);
@@ -402,11 +388,11 @@ function movePlay() {
 
 function explainingGame() {
     if (steps >= 6) {
-        explainGame.innerText = 
-        `Pilih salah satu item yang sudah ada untuk dipindah ke area lain yang memungkinkan untuk memenangkan pertandingan.`;
+        explainGame.innerText =
+            `Pilih salah satu item yang sudah ada untuk dipindah ke area lain yang memungkinkan untuk memenangkan pertandingan.`;
     } else {
-        explainGame.innerText = 
-        `Letakkan item ke salah satu area yang kosong. Sejajarkan item sehingga membentuk baris vertikal, horizontal, atau diagonal untuk memenangkan permainan.` ;
+        explainGame.innerText =
+            `Letakkan item ke salah satu area yang kosong. Sejajarkan item sehingga membentuk baris vertikal, horizontal, atau diagonal untuk memenangkan permainan.`;
     }
 }
 
